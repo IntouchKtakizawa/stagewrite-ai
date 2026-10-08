@@ -1,6 +1,6 @@
 # StageWrite AI
 
-StageWrite AI is a browser-based songwriting and harmony workspace for musicians, producers, composers, and bands.
+StageWrite AI 1.2 is a browser-based songwriting, guitar-learning, and practice workspace for musicians, producers, composers, and bands.
 
 ## Features
 
@@ -8,6 +8,12 @@ StageWrite AI is a browser-based songwriting and harmony workspace for musicians
 - Progressions from 2 to 64 chords
 - Intro, verse, pre-chorus, chorus, post-chorus, bridge, solo, breakdown, and outro sections
 - Per-chord harmonic rhythm and synchronized metronome playback
+- Visual six-string guitar chord diagrams with open, easy, barre, and higher voicings
+- Beginner, intermediate, and advanced guitar modes connected to progression generation
+- One-click reference audio for every chord and an all-chords practice view
+- Integrated chord-change highlighting and standalone metronome mode
+- Chromatic microphone tuner with Standard, Drop D, and Half-Step Down references
+- Instrument-ready architecture for future piano, bass, and ukulele visualizations
 - Progression shapes, cadence controls, chord density, and repetitions
 - Chord locking, explained alternatives, transposition, and intelligent continuation
 - Identity-preserving variations and adjustable Progression DNA
