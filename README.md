@@ -23,3 +23,6 @@ Project data is stored in the browser's local storage.
 ## Design note
 
 This version uses a transparent, local rule-based harmony engine. It does not claim to call a hosted generative-AI model.
+To run this by browser use the link "https://intouchktakizawa.github.io/stagewrite-ai/"
+
+
