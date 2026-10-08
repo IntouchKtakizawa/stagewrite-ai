@@ -1,6 +1,6 @@
 # StageWrite AI
 
-StageWrite AI 1.2 is a browser-based songwriting, guitar-learning, and practice workspace for musicians, producers, composers, and bands.
+StageWrite AI 1.3 is a browser-based songwriting, multi-instrument learning, and backing-track practice workspace for musicians, producers, composers, and bands.
 
 ## Features
 
@@ -13,7 +13,11 @@ StageWrite AI 1.2 is a browser-based songwriting, guitar-learning, and practice 
 - One-click reference audio for every chord and an all-chords practice view
 - Integrated chord-change highlighting and standalone metronome mode
 - Chromatic microphone tuner with Standard, Drop D, and Half-Step Down references
-- Instrument-ready architecture for future piano, bass, and ukulele visualizations
+- Piano chord visualization, four-string ukulele diagrams, and bass note/TAB views
+- Chord-aware generated basslines with six playing styles
+- Genre-aware editable drum sequencer with undo and redo
+- Synchronized backing-track mixer, count-in, looping, and master transport
+- Independent chord, bass, and drum regeneration with locks
 - Progression shapes, cadence controls, chord density, and repetitions
 - Chord locking, explained alternatives, transposition, and intelligent continuation
 - Identity-preserving variations and adjustable Progression DNA
@@ -36,4 +40,3 @@ To run this by browser use the link "https://intouchktakizawa.github.io/stagewri
 The modern product overview and interactive “how it works” page is included at [`explainer/`](explainer/) and is published at:
 
 https://intouchktakizawa.github.io/stagewrite-ai/explainer/
-
