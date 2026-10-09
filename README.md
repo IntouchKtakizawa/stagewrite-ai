@@ -1,10 +1,15 @@
 # StageWrite AI
 
-StageWrite AI 1.4.1 is a browser-based songwriting, multi-instrument learning, and sample-based backing-track practice workspace for musicians, producers, composers, and bands.
+StageWrite AI 1.4.2 is a browser-based songwriting, multi-instrument learning, and sample-based backing-track practice workspace for musicians, producers, composers, and bands.
 
 ## Features
 
 - Music-theory-aware progression generation by key, genre, mood, and complexity
+- Dynamic chord-symbol parsing with aliases, slash chords, alterations, extensions, added tones, and enharmonic spellings
+- Live chord search with keyboard navigation, typo-tolerant matching, confidence states, and theory-aware suggestions
+- Interactive 12-fret guitar builder with open/muted strings, live note calculation, chord detection, exact-voicing playback, and custom naming
+- Manual note entry, multiple possible chord interpretations, and locally saved “My Chords” voicings
+- First-class custom chords that can be added, replaced, duplicated, renamed, deleted, played, saved, and exported with progressions
 - Progressions from 2 to 64 chords
 - Intro, verse, pre-chorus, chorus, post-chorus, bridge, solo, breakdown, and outro sections
 - Per-chord harmonic rhythm and synchronized metronome playback

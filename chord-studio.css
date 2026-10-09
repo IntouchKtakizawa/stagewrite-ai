@@ -1,0 +1,29 @@
+#chordStudio{max-width:980px;height:min(790px,calc(100vh - 28px));overflow:hidden}
+#chordStudio .modal-head{align-items:center}
+#chordStudio .modal-head h3{margin:3px 0 0;font-size:1.15rem}
+.chord-studio-body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);height:calc(100% - 76px);overflow:hidden}
+.chord-workspace{padding:18px;overflow:auto}
+.chord-sidebar{padding:18px;border-left:1px solid var(--line);background:#0c0f14;overflow:auto}
+.studio-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.studio-tabs button{border:1px solid var(--line);background:#0b0e13;color:var(--muted);border-radius:8px;padding:8px 11px;font-size:.74rem;font-weight:600}
+.studio-tabs button.active{background:var(--lime);border-color:var(--lime);color:#090b10}
+.studio-pane{display:none}.studio-pane.active{display:block}
+.search-wrap{position:relative}.chord-search{height:52px;font-size:1.05rem;padding:0 15px}
+.search-hint{font-size:.7rem;color:var(--muted);line-height:1.5;margin:8px 0 12px}
+.search-results{display:grid;gap:7px}
+.search-result{width:100%;border:1px solid var(--line);background:#0c0f14;color:var(--text);border-radius:10px;padding:11px 12px;display:grid;grid-template-columns:1fr auto;text-align:left;gap:6px}
+.search-result:hover,.search-result.active{border-color:var(--lime);background:#151a20}.search-result strong{font-size:.92rem}.search-result span{font:500 .63rem DM Mono;color:var(--muted)}
+.status-chip{display:inline-flex;border:1px solid #526226;border-radius:999px;padding:4px 7px;color:var(--lime);font:500 .61rem DM Mono;text-transform:uppercase}
+.unknown-box{border:1px dashed #49505e;border-radius:11px;padding:14px;background:#0c0f14}.unknown-box h4{margin:0 0 6px}.unknown-box p{font-size:.76rem;color:var(--muted);line-height:1.5}
+.studio-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
+.chord-detail h3{font-size:2rem;margin:7px 0 3px;letter-spacing:-.05em}.chord-detail h4{font-size:.76rem;color:var(--muted);margin:18px 0 8px;text-transform:uppercase;letter-spacing:.08em}
+.detail-notes{font:500 .84rem DM Mono;color:var(--lime);line-height:1.7}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:.72rem;color:#c3c9d4}.detail-grid span:nth-child(odd){color:var(--muted)}
+.similar-list{display:flex;flex-wrap:wrap;gap:6px}.similar-list button{border:1px solid var(--line);background:#11151c;color:#d9dee8;border-radius:999px;padding:6px 9px;font-size:.68rem}
+.fret-builder{overflow-x:auto;padding-bottom:7px}.fret-grid{display:grid;grid-template-columns:38px repeat(13,38px);gap:4px;min-width:570px;align-items:center}.fret-number{text-align:center;font:500 .57rem DM Mono;color:var(--muted)}
+.string-label{font:500 .66rem DM Mono;color:var(--muted);text-align:center}.fret-button{height:31px;border:1px solid #343b49;background:#0b0e13;color:#7d8594;border-radius:5px;font:500 .62rem DM Mono;padding:0}.fret-button.open{color:var(--blue);border-color:var(--blue)}.fret-button.selected{background:var(--lime);border-color:var(--lime);color:#0a0c0e}.fret-button.muted{color:var(--danger);border-color:#704045}
+.builder-summary{margin-top:13px;padding:12px;border:1px solid var(--line);border-radius:9px;font-size:.75rem;line-height:1.65}.builder-summary strong{color:var(--lime)}
+.manual-notes{min-height:52px}.manual-example{font-size:.7rem;color:var(--muted);margin-top:8px}
+.custom-name{margin-top:12px}.saved-chords{display:grid;gap:8px}.saved-chord{border:1px solid var(--line);border-radius:9px;padding:11px;background:#10141a}.saved-chord strong{display:block}.saved-chord small{display:block;color:var(--muted);font:500 .62rem DM Mono;margin:5px 0 8px}.saved-chord .studio-actions{margin-top:0}
+.progression-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:13px}.progression-tools button{padding:8px;font-size:.68rem}
+.empty-studio{color:var(--muted);font-size:.76rem;line-height:1.6}
+@media(max-width:760px){#chordStudio{height:calc(100vh - 12px);width:calc(100% - 12px)}.chord-studio-body{grid-template-columns:1fr;overflow:auto}.chord-workspace,.chord-sidebar{overflow:visible}.chord-sidebar{border-left:0;border-top:1px solid var(--line)}.fret-grid{grid-template-columns:34px repeat(13,34px)}.chord-detail h3{font-size:1.65rem}}
