@@ -7,7 +7,7 @@
   <meta name="description" content="StageWrite AI — harmony, real-instrument backing tracks, guitar chord diagrams, tuner and practice tools for songwriters.">
   <title>StageWrite AI</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090b10'/%3E%3Cpath d='M14 42h8V25h8v17h8V18h8v24h5' fill='none' stroke='%23d9ff55' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="chord-studio.css">
+  <link rel="stylesheet" href="chord-studio.css?v=1.4.2b">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap');
     :root{--bg:#090b10;--panel:#11141b;--panel2:#171b24;--line:#272c38;--muted:#8f96a7;--text:#f5f7fb;--lime:#d9ff55;--lime2:#a9cf25;--blue:#7f8cff;--danger:#ff6e70;--r:13px}
@@ -330,6 +330,6 @@ function registerWebMCP(){let mc=document.modelContext;if(!mc?.registerTool)retu
 window.StageWriteApp={get state(){return state},current,generateBass,render,toast,sections,seekToChord,chordStartStep,escapeHtml,async previewChord(chord){await audioEngine.prepare(['Piano']);ctx=audioEngine.context;playChord(chord,ctx.currentTime+.03,1.5,'Piano')}};
 try{init()}catch(error){console.error('StageWrite initialization failed',error);throw error}
 </script>
-<script src="chord-studio.js"></script>
+<script src="chord-studio.js?v=1.4.2b"></script>
 </body>
 </html>
