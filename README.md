@@ -1,6 +1,6 @@
 # StageWrite AI
 
-StageWrite AI 1.4 is a browser-based songwriting, multi-instrument learning, and sample-based backing-track practice workspace for musicians, producers, composers, and bands.
+StageWrite AI 1.4.1 is a browser-based songwriting, multi-instrument learning, and sample-based backing-track practice workspace for musicians, producers, composers, and bands.
 
 ## Features
 
@@ -11,12 +11,15 @@ StageWrite AI 1.4 is a browser-based songwriting, multi-instrument learning, and
 - Visual six-string guitar chord diagrams with open, easy, barre, and higher voicings
 - Beginner, intermediate, and advanced guitar modes connected to progression generation
 - One-click sample-based reference audio for every chord and an all-chords practice view
-- Integrated chord-change highlighting and standalone metronome mode
+- Audio-clock-driven chord highlighting, per-chord progress, Now Playing status, and standalone metronome mode
 - Chromatic microphone tuner with Standard, Drop D, and Half-Step Down references
 - Piano chord visualization, four-string ukulele diagrams, and bass note/TAB views
 - Chord-aware generated basslines with six playing styles
-- Genre-aware editable drum sequencer with undo and redo
-- Polyphonic acoustic piano, steel-string guitar, electric bass, dedicated ukulele, and individual drum samples
+- Genre-aware editable drum sequencer with seven kit presets, swing, humanisation, generated fills, undo, and redo
+- Nine guitar sound presets spanning steel, nylon, clean, jazz, crunch, distortion, and high-gain tones
+- Strumming, fingerpicking, arpeggio, sustained-chord, and muted-rhythm guitar performance modes
+- Live guitar reverb, delay, chorus, drive, and compression controls
+- Polyphonic acoustic piano, sampled guitar families, electric bass, dedicated ukulele, and multi-articulation drum samples
 - Lazy sample loading with session caching, automatic retry, and graceful fallback playback
 - Synchronized backing-track mixer with live volume, mute, solo, master level, count-in, looping, and transport
 - Instrument previews, bar/beat and elapsed-time readouts, restart, pause, and immediate stop
@@ -27,6 +30,7 @@ StageWrite AI 1.4 is a browser-based songwriting, multi-instrument learning, and
 - Identity-preserving variations and adjustable Progression DNA
 - MIDI, MusicXML, and chord-chart export
 - Local project library with no account or server required
+- Persistent Settings page with themes, custom colours, audio/playback defaults, accessibility controls, and keyboard shortcuts
 
 ## Run locally
 
