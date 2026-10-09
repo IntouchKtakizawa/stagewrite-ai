@@ -1,6 +1,6 @@
 # StageWrite AI
 
-StageWrite AI 1.3 is a browser-based songwriting, multi-instrument learning, and backing-track practice workspace for musicians, producers, composers, and bands.
+StageWrite AI 1.4 is a browser-based songwriting, multi-instrument learning, and sample-based backing-track practice workspace for musicians, producers, composers, and bands.
 
 ## Features
 
@@ -10,13 +10,17 @@ StageWrite AI 1.3 is a browser-based songwriting, multi-instrument learning, and
 - Per-chord harmonic rhythm and synchronized metronome playback
 - Visual six-string guitar chord diagrams with open, easy, barre, and higher voicings
 - Beginner, intermediate, and advanced guitar modes connected to progression generation
-- One-click reference audio for every chord and an all-chords practice view
+- One-click sample-based reference audio for every chord and an all-chords practice view
 - Integrated chord-change highlighting and standalone metronome mode
 - Chromatic microphone tuner with Standard, Drop D, and Half-Step Down references
 - Piano chord visualization, four-string ukulele diagrams, and bass note/TAB views
 - Chord-aware generated basslines with six playing styles
 - Genre-aware editable drum sequencer with undo and redo
-- Synchronized backing-track mixer, count-in, looping, and master transport
+- Polyphonic acoustic piano, steel-string guitar, electric bass, dedicated ukulele, and individual drum samples
+- Lazy sample loading with session caching, automatic retry, and graceful fallback playback
+- Synchronized backing-track mixer with live volume, mute, solo, master level, count-in, looping, and transport
+- Instrument previews, bar/beat and elapsed-time readouts, restart, pause, and immediate stop
+- Optional humanisation and genre-aware guitar, bass, ukulele, and drum patterns
 - Independent chord, bass, and drum regeneration with locks
 - Progression shapes, cadence controls, chord density, and repetitions
 - Chord locking, explained alternatives, transposition, and intelligent continuation
@@ -29,6 +33,8 @@ StageWrite AI 1.3 is a browser-based songwriting, multi-instrument learning, and
 Open `index.html` through any static web server. The application has no build step and requires no API key.
 
 Project data is stored in the browser's local storage.
+
+Bundled audio assets and their redistribution terms are documented in [`SAMPLE-LICENSES.md`](SAMPLE-LICENSES.md).
 
 ## Design note
 
