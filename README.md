@@ -1,6 +1,6 @@
 # StageWrite AI
 
-StageWrite AI 1.4.2 is a browser-based songwriting, multi-instrument learning, and sample-based backing-track practice workspace for musicians, producers, composers, and bands.
+StageWrite AI 1.5 is a browser-based songwriting, multi-instrument learning, and sample-based backing-track practice workspace for musicians, producers, composers, and bands. V1.5 introduces the StageWrite Studio visual system while preserving the established music engine and workflow.
 
 ## Features
 
