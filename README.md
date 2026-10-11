@@ -4,7 +4,7 @@ StageWrite AI 1.6 is a browser-based songwriting, multi-instrument learning, and
 
 ## Features
 
-- Draggable, minimizable studio companion with seven appearances, four behaviour modes, three explanation levels, size, opacity, edge snapping, position locking, and remembered placement
+- Optional beta studio companion, disabled by default, with seven appearances, four behaviour modes, three explanation levels, size, opacity, edge snapping, position locking, and remembered placement
 - Real-time key, scale, Roman-numeral, chord-quality, inversion, slash-chord, function, cadence, emotional, tension, and voice-leading analysis
 - Detection and explanation of modal interchange, borrowed chords, secondary dominants, suspended harmony, extensions, chromatic mediants, tritone substitutions, and Neapolitan harmony where present
 - Per-chord “Why?” explanations grounded in the current progression, with beginner, intermediate, and advanced detail
