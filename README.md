@@ -1,8 +1,15 @@
 # StageWrite AI
 
-StageWrite AI 1.5 is a browser-based songwriting, multi-instrument learning, and sample-based backing-track practice workspace for musicians, producers, composers, and bands. V1.5 introduces the StageWrite Studio visual system while preserving the established music engine and workflow.
+StageWrite AI 1.6 is a browser-based songwriting, multi-instrument learning, and sample-based backing-track practice workspace for musicians, producers, composers, and bands. V1.6 adds a private, local music-theory assistant while preserving the established StageWrite Studio engine and workflow.
 
 ## Features
+
+- Draggable, minimizable studio companion with seven appearances, four behaviour modes, three explanation levels, size, opacity, edge snapping, position locking, and remembered placement
+- Real-time key, scale, Roman-numeral, chord-quality, inversion, slash-chord, function, cadence, emotional, tension, and voice-leading analysis
+- Detection and explanation of modal interchange, borrowed chords, secondary dominants, suspended harmony, extensions, chromatic mediants, tritone substitutions, and Neapolitan harmony where present
+- Per-chord “Why?” explanations grounded in the current progression, with beginner, intermediate, and advanced detail
+- Interactive questions about the current song, including tension, emotion, voice leading, cadences, darker/brighter harmony, jazz treatment, and theory concepts
+- Optional on-device composing-style learning; disabled by default and stored only in the browser
 
 - Music-theory-aware progression generation by key, genre, mood, and complexity
 - Dynamic chord-symbol parsing with aliases, slash chords, alterations, extensions, added tones, and enharmonic spellings
@@ -47,7 +54,7 @@ Bundled audio assets and their redistribution terms are documented in [`SAMPLE-L
 
 ## Design note
 
-This version uses a transparent, local rule-based harmony engine. It does not claim to call a hosted generative-AI model.
+This version uses a transparent, local rule-based harmony and music-theory engine. The assistant does not call a hosted generative-AI model, and its explanations are derived from the active song state.
 To run this by browser use the link "https://intouchktakizawa.github.io/stagewrite-ai/"
 
 ## Product explainer

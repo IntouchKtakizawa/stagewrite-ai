@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0b0d10">
-  <meta name="description" content="StageWrite AI — harmony, real-instrument backing tracks, guitar chord diagrams, tuner and practice tools for songwriters.">
+  <meta name="description" content="StageWrite AI 1.6 — an intelligent songwriting workspace with real-time music-theory analysis, coaching, instruments, backing tracks, tuner and practice tools.">
   <title>StageWrite AI</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090b10'/%3E%3Cpath d='M14 42h8V25h8v17h8V18h8v24h5' fill='none' stroke='%23d9ff55' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="chord-studio.css?v=1.5">
@@ -37,11 +37,12 @@
   </style>
   <link rel="stylesheet" href="stagewrite-v15.css?v=1.5.1a">
   <link rel="stylesheet" href="stagewrite-v152.css?v=1.5.2a">
+  <link rel="stylesheet" href="assistant.css?v=1.6.0">
 </head>
 <body>
 <div class="app">
   <aside class="side">
-    <div class="brand"><span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 16h3V9h4v7h4V5h4v11h3"/></svg></span><span class="brand-name">StageWrite<small>STUDIO</small></span><span class="version">1.5.2</span></div>
+    <div class="brand"><span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 16h3V9h4v7h4V5h4v11h3"/></svg></span><span class="brand-name">StageWrite<small>STUDIO</small></span><span class="version">1.6</span></div>
     <nav class="nav" aria-label="Main navigation">
       <button class="active" data-view="compose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg>Compose</button>
       <button data-view="tuner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v10m-5-5h10M5 18h14M8 13v8m8-8v8"/></svg>Tuner</button>
@@ -335,5 +336,7 @@ window.StageWriteApp={get state(){return state},current,generateBass,render,toas
 try{init();$('.tuner-ticks').textContent=''}catch(error){console.error('StageWrite initialization failed',error);throw error}
 </script>
 <script src="chord-studio.js?v=1.5.2"></script>
+<script src="theory-engine.js?v=1.6.0"></script>
+<script src="assistant.js?v=1.6.0"></script>
 </body>
 </html>
