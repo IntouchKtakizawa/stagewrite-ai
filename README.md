@@ -1,64 +1,63 @@
 # StageWrite AI
 
-StageWrite AI 1.6 is a browser-based songwriting, multi-instrument learning, and sample-based backing-track practice workspace for musicians, producers, composers, and bands. V1.6 adds a private, local music-theory assistant while preserving the established StageWrite Studio engine and workflow.
+## 1. Product overview
 
-## Features
+StageWrite AI V1.6 (Refined) is a local-first browser songwriting workspace. Its focused workflow is: choose a musical direction, generate a progression, listen, lock or edit the chords, then save or export. The interface is organised into Compose, Play, Arrange and Learn workspaces so advanced tools stay available without crowding the first screen.
 
-- Optional beta studio companion, disabled by default, with seven appearances, four behaviour modes, three explanation levels, size, opacity, edge snapping, position locking, and remembered placement
-- Real-time key, scale, Roman-numeral, chord-quality, inversion, slash-chord, function, cadence, emotional, tension, and voice-leading analysis
-- Detection and explanation of modal interchange, borrowed chords, secondary dominants, suspended harmony, extensions, chromatic mediants, tritone substitutions, and Neapolitan harmony where present
-- Per-chord “Why?” explanations grounded in the current progression, with beginner, intermediate, and advanced detail
-- Interactive questions about the current song, including tension, emotion, voice leading, cadences, darker/brighter harmony, jazz treatment, and theory concepts
-- Optional on-device composing-style learning; disabled by default and stored only in the browser
+The current product uses transparent, deterministic music-theory rules and Web Audio. It does not use a hosted generative-AI model, require an account, or upload projects.
 
-- Music-theory-aware progression generation by key, genre, mood, and complexity
-- Dynamic chord-symbol parsing with aliases, slash chords, alterations, extensions, added tones, and enharmonic spellings
-- Live chord search with keyboard navigation, typo-tolerant matching, confidence states, and theory-aware suggestions
-- Interactive 12-fret guitar builder with open/muted strings, live note calculation, chord detection, exact-voicing playback, and custom naming
-- Manual note entry, multiple possible chord interpretations, and locally saved “My Chords” voicings
-- First-class custom chords that can be added, replaced, duplicated, renamed, deleted, played, saved, and exported with progressions
-- Progressions from 2 to 64 chords
-- Intro, verse, pre-chorus, chorus, post-chorus, bridge, solo, breakdown, and outro sections
-- Per-chord harmonic rhythm and synchronized metronome playback
-- Visual six-string guitar chord diagrams with open, easy, barre, and higher voicings
-- Beginner, intermediate, and advanced guitar modes connected to progression generation
-- One-click sample-based reference audio for every chord and an all-chords practice view
-- Audio-clock-driven chord highlighting, per-chord progress, Now Playing status, and standalone metronome mode
-- Chromatic microphone tuner with Standard, Drop D, and Half-Step Down references
-- Piano chord visualization, four-string ukulele diagrams, and bass note/TAB views
-- Chord-aware generated basslines with six playing styles
-- Genre-aware editable drum sequencer with seven kit presets, swing, humanisation, generated fills, undo, and redo
-- Nine guitar sound presets spanning steel, nylon, clean, jazz, crunch, distortion, and high-gain tones
-- Strumming, fingerpicking, arpeggio, sustained-chord, and muted-rhythm guitar performance modes
-- Live guitar reverb, delay, chorus, drive, and compression controls
-- Polyphonic acoustic piano, sampled guitar families, electric bass, dedicated ukulele, and multi-articulation drum samples
-- Lazy sample loading with session caching, automatic retry, and graceful fallback playback
-- Synchronized backing-track mixer with live volume, mute, solo, master level, count-in, looping, and transport
-- Instrument previews, bar/beat and elapsed-time readouts, restart, pause, and immediate stop
-- Optional humanisation and genre-aware guitar, bass, ukulele, and drum patterns
-- Independent chord, bass, and drum regeneration with locks
-- Progression shapes, cadence controls, chord density, and repetitions
-- Chord locking, explained alternatives, transposition, and intelligent continuation
-- Identity-preserving variations and adjustable Progression DNA
-- MIDI, MusicXML, and chord-chart export
-- Local project library with no account or server required
-- Persistent Settings page with themes, custom colours, audio/playback defaults, accessibility controls, and keyboard shortcuts
+## 2. Current capabilities
 
-## Run locally
+- Context-aware chord progressions by key, genre, mood, complexity, shape and cadence
+- Verse and Chorus as the default structure, with seven optional song sections
+- Chord locking, replacement, custom voicings, transposition, continuation and focused transformations
+- Guitar, bass, piano and ukulele views with practical voicings and reference playback
+- Metronome, master transport, instrument previews, editable drum sequencer and mixer
+- Sample-based backing tracks with mute, solo, volume, count-in, looping and humanisation
+- Fully chromatic tuner with grouped guitar, bass and ukulele reference presets
+- Local project library with open, duplicate, export and delete actions
+- MIDI, MusicXML and chord-chart export
+- Studio, Midnight, Graphite, Ivory and Stage themes
+- Reduced motion, high contrast, larger text, keyboard focus and shortcuts
 
-Open `index.html` through any static web server. The application has no build step and requires no API key.
+## 3. V1.6 (Refined) changes
 
-Project data is stored in the browser's local storage.
+- Reorganised the main workspace into Compose, Play, Arrange and Learn
+- Reduced the default song structure to Verse and Chorus, with an Add section control
+- Consolidated transformation actions into one Transform menu
+- Clarified global, section, arrangement, chord and instrument playback actions
+- Replaced unexplained percentages in Progression DNA with a qualitative Harmony Profile
+- Made the inactive tuner smaller and clarified its permission flow
+- Expanded Library project metadata and backup guidance
+- Moved specialist colour controls under Advanced appearance
+- Unified product identity around “Ideas, tuned into music.” and V1.6 (Refined)
 
-Bundled audio assets and their redistribution terms are documented in [`SAMPLE-LICENSES.md`](SAMPLE-LICENSES.md).
+## 4. Technical and privacy notes
 
-## Design note
+Open `index.html` through any static web server. There is no build step and no API key. Settings, assistant preferences, custom chords and projects use browser local storage. Export important projects for backup because clearing browser data can remove them.
 
-This version uses a transparent, local rule-based harmony and music-theory engine. The assistant does not call a hosted generative-AI model, and its explanations are derived from the active song state.
-To run this by browser use the link "https://intouchktakizawa.github.io/stagewrite-ai/"
+The optional **StageWrite Theory Assistant** is an experimental local music-theory assistant powered by StageWrite’s transparent theory engine. It is Beta, disabled by default, locally processed and potentially incomplete. Its visible controls are limited to enabled/disabled, explanation level and behaviour. It is not a cloud model or unrestricted conversational AI.
 
-## Product explainer
+Microphone permission is requested only after the user presses **Start tuner**. Pitch detection is processed locally. Bundled audio assets and redistribution terms are documented in [`SAMPLE-LICENSES.md`](SAMPLE-LICENSES.md).
 
-The modern product overview and interactive “how it works” page is included at [`explainer/`](explainer/) and is published at:
+## 5. StageWrite AI Version History
 
-https://intouchktakizawa.github.io/stagewrite-ai/explainer/
+- **V1.6 (Refined):** focused workspace navigation, clearer playback, qualitative Harmony Profile, compact tuner, improved Library, simplified assistant and documentation
+- **V1.6:** optional local Theory Assistant and contextual theory analysis
+- **V1.5.2:** professional tuner and interface refinement
+- **V1.5:** StageWrite Studio themes, sample playback and expanded settings
+- **V1.4:** chord studio, custom voicings and instrument workflow improvements
+- **V1.3:** multi-instrument views, drum sequencing, backing track and transport
+- **V1.2:** guitar diagrams, tuner, metronome, project storage and export foundations
+
+### Interface Rework Patches
+
+Minor interface patches preserve the current music engine and saved-data structure unless a migration is explicitly documented.
+
+## 6. Future roadmap
+
+Planned ideas are not current features. Possible future work includes deeper arrangement editing, more notation tools, additional instrument libraries and improved local theory explanations. Accounts, subscriptions, cloud processing and unrestricted AI chat are not part of the current product.
+
+Live app: https://intouchktakizawa.github.io/stagewrite-ai/
+
+Product explainer: https://intouchktakizawa.github.io/stagewrite-ai/explainer/
