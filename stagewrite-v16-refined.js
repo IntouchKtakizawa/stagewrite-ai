@@ -16,7 +16,7 @@ function makePanel(name,label,description){
   return panel;
 }
 
-const composeView=$('#composeView'),tabs=$$('#workspaceTabs'),workgrid=composeView.querySelector('.workgrid'),stack=composeView.querySelector('.v13-stack'),transport=$('#transport');
+const composeView=$('#composeView'),tabs=$('#workspaceTabs'),workgrid=composeView.querySelector('.workgrid'),stack=composeView.querySelector('.v13-stack'),transport=$('#transport');
 const mainCard=workgrid?.querySelector(':scope > div > .card'),rightCards=workgrid?[...workgrid.querySelectorAll('.rightcol > .card')]:[],stackCards=stack?[...stack.children]:[];
 const panels=document.createElement('div');
 panels.className='workspace-panels';
