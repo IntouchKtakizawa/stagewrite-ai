@@ -7,12 +7,16 @@ function makePanel(name,label,description){
   const panel=document.createElement('section');
   panel.className='workspace-panel';
   panel.dataset.workspacePanel=name;
+  panel.id=`workspace-panel-${name}`;
+  panel.setAttribute('role','tabpanel');
+  panel.setAttribute('aria-labelledby',`workspace-tab-${name}`);
+  panel.tabIndex=0;
   panel.hidden=name!=='compose';
   panel.innerHTML=`<div class="workspace-intro"><div><strong>${label}</strong><p>${description}</p></div></div>`;
   return panel;
 }
 
-const composeView=$('#composeView'),tabs=$('#workspaceTabs'),workgrid=composeView.querySelector('.workgrid'),stack=composeView.querySelector('.v13-stack'),transport=$('#transport');
+const composeView=$('#composeView'),tabs=$$('#workspaceTabs'),workgrid=composeView.querySelector('.workgrid'),stack=composeView.querySelector('.v13-stack'),transport=$('#transport');
 const mainCard=workgrid?.querySelector(':scope > div > .card'),rightCards=workgrid?[...workgrid.querySelectorAll('.rightcol > .card')]:[],stackCards=stack?[...stack.children]:[];
 const panels=document.createElement('div');
 panels.className='workspace-panels';
@@ -36,18 +40,42 @@ const quickActions=document.createElement('div');
 quickActions.className='actions workspace-quick-actions';
 quickActions.innerHTML='<button class="primary" id="workspaceSave">Save project</button><button class="ghost" id="workspaceExport">Export</button>';
 compose.querySelector('.workspace-intro').appendChild(quickActions);
+tabs.setAttribute('role','tablist');
+$$('#workspaceTabs [data-workspace]').forEach(button=>{
+  button.id=`workspace-tab-${button.dataset.workspace}`;
+  button.setAttribute('role','tab');
+  button.setAttribute('aria-controls',`workspace-panel-${button.dataset.workspace}`);
+});
 tabs.after(panels);
 workgrid?.remove();stack?.remove();
 composeView.appendChild(transport);
 
-function setWorkspace(name){
-  $$('#workspaceTabs [data-workspace]').forEach(button=>{const active=button.dataset.workspace===name;button.classList.toggle('active',active);button.setAttribute('aria-selected',String(active))});
-  $$('[data-workspace-panel]').forEach(panel=>panel.hidden=panel.dataset.workspacePanel!==name);
-  sessionStorage.setItem('stagewrite-workspace',name);
+const workspaceNames=['compose','play','arrange','learn'];
+function setWorkspace(name,{focus=false}={}){
+  if(!workspaceNames.includes(name))name='compose';
+  $$('#workspaceTabs [data-workspace]').forEach(button=>{const active=button.dataset.workspace===name;button.classList.toggle('active',active);button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1});
+  $$('[data-workspace-panel]').forEach(panel=>{const active=panel.dataset.workspacePanel===name;panel.hidden=!active;panel.setAttribute('aria-hidden',String(!active))});
+  try{sessionStorage.setItem('stagewrite-workspace',name)}catch{}
+  if(focus)$('#workspace-tab-'+name)?.focus();
   scrollTo({top:0,behavior:document.documentElement.classList.contains('reduced-motion')?'auto':'smooth'});
 }
 tabs.addEventListener('click',event=>{const button=event.target.closest('[data-workspace]');if(button)setWorkspace(button.dataset.workspace)});
-setWorkspace(sessionStorage.getItem('stagewrite-workspace')||'compose');
+tabs.addEventListener('keydown',event=>{
+  const button=event.target.closest('[data-workspace]');
+  if(!button)return;
+  const index=workspaceNames.indexOf(button.dataset.workspace);
+  let nextIndex;
+  if(event.key==='ArrowRight')nextIndex=(index+1)%workspaceNames.length;
+  else if(event.key==='ArrowLeft')nextIndex=(index-1+workspaceNames.length)%workspaceNames.length;
+  else if(event.key==='Home')nextIndex=0;
+  else if(event.key==='End')nextIndex=workspaceNames.length-1;
+  else return;
+  event.preventDefault();
+  setWorkspace(workspaceNames[nextIndex],{focus:true});
+});
+let savedWorkspace='compose';
+try{savedWorkspace=sessionStorage.getItem('stagewrite-workspace')||'compose'}catch{}
+setWorkspace(savedWorkspace);
 $('#workspaceSave').onclick=()=>$('#saveBtn').click();
 $('#workspaceExport').onclick=()=>$('#exportBtn').click();
 
