@@ -1,0 +1,17 @@
+node_modules/
+coverage/
+.next/
+.expo/
+**/gen/
+**/target/
+*.min.js
+*.min.css
+*.map
+*.tsbuildinfo
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lock
+bun.lockb
+dist/
+build/
