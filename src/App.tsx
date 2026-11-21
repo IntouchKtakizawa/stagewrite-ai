@@ -55,7 +55,7 @@ export default function App() {
     const apply = () => {
       const dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
       document.documentElement.dataset.theme = dark ? 'dark' : 'light';
-      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#0b0b0f' : '#f5f3ee');
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#100e0c' : '#ece4d3');
     };
     apply();
     setPref('sw2:theme', theme);

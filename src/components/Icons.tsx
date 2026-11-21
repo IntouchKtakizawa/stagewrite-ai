@@ -40,8 +40,9 @@ export const IconArrowLeft = (p: P) => <svg {...base(p)}><path d="M15 6l-6 6 6 6
 export const IconMic = (p: P) => <svg {...base(p)}><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5 11a7 7 0 0 0 14 0M12 18v3" /></svg>;
 export const IconLogo = (p: P) => (
   <svg {...base(p)} viewBox="0 0 32 32" stroke="none">
-    <rect width="32" height="32" rx="9" fill="var(--accent)" />
-    <path d="M9 21.5c2.5 0 3.6-1.6 3.6-3.4 0-3.8-5.3-2.5-5.3-6.1 0-1.7 1.3-3 3.6-3 1.4 0 2.5.4 3.3 1.1" stroke="var(--accent-ink)" strokeWidth="2.4" fill="none" strokeLinecap="round" />
-    <path d="M16.5 9.5l2 12 2.6-8 2.6 8 2-12" stroke="var(--accent-ink)" strokeWidth="2.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <rect x="1" y="1" width="30" height="30" rx="7" fill="var(--accent)" stroke="var(--text)" strokeWidth="1.5" />
+    <path d="M4 12.5h24M4 16.5h24M4 20.5h24" stroke="var(--accent-ink)" strokeOpacity=".35" strokeWidth="1" />
+    <ellipse cx="12.2" cy="21.6" rx="3.6" ry="2.7" transform="rotate(-22 12.2 21.6)" fill="var(--accent-ink)" />
+    <path d="M15.2 21V7.5c3 .6 5.6 2.6 6.4 5.6" stroke="var(--accent-ink)" strokeWidth="2.2" fill="none" strokeLinecap="round" />
   </svg>
 );
