@@ -1,57 +1,50 @@
-# StageWrite Studio
+# StageWrite 2
 
-A browser songwriting workspace for exploring chord progressions, hearing arrangements, and exporting musical ideas. The repository and live app also use the name **StageWrite AI**.
+A mobile-first songwriting studio. Generate chord progressions, tap any chord to hear it, swap it or lock it, then build a backing band around it — all in the browser, on your phone or desktop.
 
-[Open the app](https://intouchktakizawa.github.io/stagewrite-ai/) · [Product explainer](https://intouchktakizawa.github.io/stagewrite-ai/explainer/)
+**[Open the app →](https://intouchktakizawa.github.io/stagewrite-ai/)**
 
-![StageWrite interface preview](https://raw.githubusercontent.com/IntouchKtakizawa/personal-website/main/images/stagewrite-ai.png)
+Installable as an app: on iPhone use *Share → Add to Home Screen*, on Android/Chrome use *Install app*. After the first visit it works offline.
 
-## Features
+## What's new in version 2
 
-- Generate progressions by key, genre, mood, complexity, shape, and cadence.
-- Lock, replace, transpose, and edit chords and custom voicings across song sections.
-- Explore guitar, bass, piano, and ukulele views and reference playback.
-- Arrange sample-based backing tracks with a drum sequencer, mixer, metronome, count-in, looping, and humanisation.
-- Tune instruments with local microphone pitch detection.
-- Save projects locally and export MIDI, MusicXML, and chord charts.
-- Choose themes, reduced motion, high contrast, larger text, and keyboard shortcuts.
+StageWrite 2 is a ground-up rewrite of V1.6 in React + TypeScript.
 
-## Stack and design
+- **Built for phones first.** Bottom tab bar, a floating transport that's always in reach, bottom-sheet chord editor and big touch targets. A side rail on desktop.
+- **Write.** Pick a genre (10) and a mood (9), then generate 4 or 8 chords at three complexity levels. Locked chords survive regenerating. Songs can have multiple sections (Verse, Chorus, Bridge…) with repeats. You can type chords directly (`F#m7b5`, `G/B`), drag to reorder, transpose, and undo/redo every change.
+- **Chord editor.** Hear the chord, see guitar/ukulele/piano diagrams (shapes are computed for any chord, with alternate fingerings), and get ranked "try instead" ideas: diatonic swaps, borrowed chords, secondary dominants, tritone subs and passing diminished chords.
+- **Band.** Sampled piano, five guitar tones, ukulele, bass and drums. You can choose the chord rhythm (pads, pulse, strum, arpeggio, skank) and the bass style (roots, drive, fifths, walking). There's a 16-step drum sequencer with presets, plus swing, humanise, count-in, metronome and a 4-channel mixer.
+- **Learn.** Shows the harmonic function of every chord and a tension curve across the whole song. It also detects the key and the cadence, and gives plain-language tips.
+- **Tune.** Microphone tuner for guitar (standard, drop D, DADGAD, half-step down), bass, ukulele or chromatic, with reference tones.
+- **Songs.** Save to a local library. You can share a song as a link, export MIDI (chords, bass and drums), copy or download a chord chart, and back up or import JSON. Light and dark themes are included.
 
-Plain HTML, CSS, and JavaScript, browser Web Audio, bundled instrument samples, and browser local storage. There is no dependency install, build step, account, or API key.
+Progression ideas come from deterministic music-theory rules running on your device. No accounts, servers or AI APIs are involved, and microphone audio never leaves your device.
 
-Progressions and the optional **Theory Assistant** use deterministic music-theory rules. They do not call a hosted generative-AI model. The assistant is experimental, disabled by default, and may give incomplete explanations.
+The previous version is kept on the [`v1` branch](https://github.com/IntouchKtakizawa/stagewrite-ai/tree/v1) and the [`v1.6` tag](https://github.com/IntouchKtakizawa/stagewrite-ai/releases/tag/v1.6).
 
-## Run locally
-
-Requires Python 3 for this example, or any other static web server:
+## Develop
 
 ```sh
-git clone https://github.com/IntouchKtakizawa/stagewrite-ai.git
-cd stagewrite-ai
-python3 -m http.server 8000
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
 ```
 
-Open **http://localhost:8000**. Start playback with an explicit click to enable browser audio. Microphone permission is requested only when you press **Start tuner**; pitch detection stays local.
-
-Settings, custom chords, assistant preferences, and projects use this browser's local storage. Export important projects as backups; clearing browser data can remove them.
+Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/deploy.yml`.
 
 ## Code guide
 
-- `index.html`: application interface and script loading
-- `stagewrite-v16-refined.js`: workspace and interaction refinements
-- `chord-studio.js`: chord-editing interface
-- `audio-engine.js`: playback and audio handling
-- `theory-engine.js`: local music-theory analysis and explanations
-- `assistant.js`: optional Theory Assistant
-- `assets/samples/`: instrument audio
-
-## Status
-
-Personal project, **V1.6 (Refined)**. The current interface groups tools into Compose, Play, Arrange, and Learn. Accounts, cloud processing, unrestricted AI chat, and deeper arrangement editing are not current features.
-
-The repository has no automated test suite. For a manual review, generate a progression, edit a chord, play an arrangement, save and reopen a project, and try an export. Tuner testing requires a microphone.
+| Path | What it does |
+| --- | --- |
+| `src/music/theory.ts` | Notes, chords, roman numerals, modes, progression generation, suggestions, cadence and key detection |
+| `src/music/voicings.ts` | Guitar/ukulele shape finder and voice-led piano voicings |
+| `src/audio/engine.ts` | Web Audio sampler, drum kit and lookahead scheduler |
+| `src/audio/midi.ts` | Standard MIDI file export |
+| `src/audio/tuner.ts` | YIN pitch detection for the tuner |
+| `src/state/project.ts` | Song model, undo/redo, local storage and share links |
+| `src/views/*` | The five screens: Write, Band, Learn, Tune, Songs |
+| `public/sw.js` | Offline cache |
 
 ## License and audio credits
 
-Code: [MIT](LICENSE). Bundled audio sources and redistribution terms: [SAMPLE-LICENSES.md](SAMPLE-LICENSES.md). These audio terms are separate from the code license.
+Code: [MIT](LICENSE). Bundled instrument samples have their own terms; see [SAMPLE-LICENSES.md](SAMPLE-LICENSES.md).
